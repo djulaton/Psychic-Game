@@ -3,7 +3,7 @@ var alphabetLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 // Set the initial global variables
 var wins = 0;
 var losses = 0;
-var guessesLeft = 9;
+var guessesLeft = 10;
 // guessesSoFar is an array that will hold all the user's guesses in each round
 var guessesSoFar = [];
 // userGuess is what the user picks by pressing a key
@@ -11,6 +11,9 @@ var userGuess = null;
 // Have computer pick a letter and store it in letterToBeGuessed
 var letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+
+// Notifies user of the game isntructions
+alert("Welcome to the Psychic Game! Can you guess what letter I'm thinking of?");
 
 // start listening for events
 document.onkeyup = function(event) {
@@ -29,27 +32,31 @@ document.onkeyup = function(event) {
 	}
 
 	// if letterToBeGuessed is same as userGuess then record it as a win
-	// and then reset guessesLeft to 9, and empty the guessesSoFar array
-	// also have the computer make a new random pick
+	// then reset guessesLeft to 10, and empty the guessesSoFar array
+	// have the computer make a new random pick
 	if (letterToBeGuessed == userGuess) {
 		wins++;
 		console.log("You won!");
-		guessesLeft = 9;
+		guessesLeft = 10;
 		guessesSoFar = [];
 		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+		//Notify user that they've won the game
+		alert("Winner Winner chicken dinner!");
 	}
 
 	// if guessesLeft gets to 0 then record it as a loss
-	// and then reset guessesLeft to 9, and empty the guessesSoFar array
+	// and then reset guessesLeft to 10, and empty the guessesSoFar array
 	// also have the computer make a new random pick
 	if (guessesLeft == 0) {
 		losses++;
 		console.log("You lost!");
-		guessesLeft = 9;
+		guessesLeft = 10;
 		guessesSoFar = [];
 		letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 		console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+		//Notify user they've lost the game :(
+		alert("Guess you're not psychic after all. Try again");
 	}
 
 	// Displaying progress to HTML
