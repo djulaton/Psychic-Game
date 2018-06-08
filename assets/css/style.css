@@ -1,8 +1,13 @@
-.jumbotron {
+.container {
     background-image: url('../images/gypsy.jpg');
     height: 600px;
     padding-bottom: 20px;
+    margin-top: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+}
+
+body {
+    background-image: url('../images/stars.gif');
 }

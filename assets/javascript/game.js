@@ -12,8 +12,10 @@ var userGuess = null;
 var letterToBeGuessed = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
 console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
 
-// Notifies user of the game isntructions
-alert("Welcome to the Psychic Game! Can you guess what letter I'm thinking of?");
+// Welcome alert populates
+$(window).on('load',function(){
+	$('.modal').modal('show');
+});
 
 // start listening for events
 document.onkeyup = function(event) {
